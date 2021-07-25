@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.ConcatAdapter
 import com.example.demo.R
 import com.example.demo.core.Resource
 import com.example.demo.data.model.Movie
-import com.example.demo.data.remote.MovieDataSource
+import com.example.demo.data.remote.RemoteMovieDataSource
 import com.example.demo.databinding.FragmentMovieBinding
 import com.example.demo.domain.MovieRepositoryImpl
 import com.example.demo.domain.RetrofitClient
@@ -28,7 +28,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MoviesAdapter.OnMovieCl
 
     private lateinit var concatAdapter: ConcatAdapter
     private lateinit var binding: FragmentMovieBinding
-    private val viewModel by viewModels<MovieViewModel> { MovieViewModelFactory(MovieRepositoryImpl(MovieDataSource(RetrofitClient.webservice))) }
+    private val viewModel by viewModels<MovieViewModel> { MovieViewModelFactory(MovieRepositoryImpl(RemoteMovieDataSource(RetrofitClient.webservice))) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
