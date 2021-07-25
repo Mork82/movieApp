@@ -37,7 +37,6 @@ data class MovieEntity(
     val adult: Boolean = false,
     @ColumnInfo(name = "backdrop_path")
     val backdrop_path: String = "",
-
     @ColumnInfo(name = "original_title")
     val original_title: String = "",
     @ColumnInfo(name = "original_language")
@@ -86,4 +85,21 @@ fun MovieEntity.toMovie(): Movie = Movie(
     this.vote_average,
     this.vote_count,
     this.movie_type,
+)
+fun Movie.toMovieEntity(movieType: String):MovieEntity = MovieEntity(
+    this.id,
+    this.adult,
+    this.backdrop_path,
+    //this.genre_ids,
+    this.original_title,
+    this.original_language,
+    this.overview,
+    this.popularity,
+    this.poster_path,
+    this.release_date,
+    this.title,
+    this.video,
+    this.vote_average,
+    this.vote_count,
+    movie_type= movieType
 )
