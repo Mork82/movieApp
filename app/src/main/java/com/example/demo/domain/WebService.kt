@@ -2,6 +2,7 @@ package com.example.demo.domain
 
 import com.example.demo.application.AppConstants
 import com.example.demo.data.model.MovieList
+import com.example.demo.data.model.TvShowList
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,7 +18,15 @@ interface WebService {
 
     @GET("movie/popular")
     suspend fun getPopulardMovies(@Query ("api_key") apiKey: String): MovieList
+
+    @GET("tv/top_rated")
+    suspend fun getTopRatedTvShow(@Query ("api_key") apiKey: String): TvShowList
+
+    @GET("tv/popular")
+    suspend fun getPopularTvShow(@Query ("api_") apiKey:String): TvShowList
 }
+
+
 
 object RetrofitClient {
 

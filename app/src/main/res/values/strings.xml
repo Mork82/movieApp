@@ -2,4 +2,10 @@
     <string name="app_name">Movie app</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="item_menu_movies">Movies</string>
+    <string name="item_menu_tv_show">Tv</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title">Andorid Studio</string>
+    <string name="nav_header_subtitle">\@@@@mail</string>
+    <string name="action_settings">Settings</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.demo.domain
+package com.example.demo.domain.movie
 
 import com.example.demo.core.Resource
 import com.example.demo.data.model.MovieList

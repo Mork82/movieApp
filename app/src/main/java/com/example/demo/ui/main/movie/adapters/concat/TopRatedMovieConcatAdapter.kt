@@ -1,16 +1,16 @@
-package com.example.demo.ui.main.adapters.concat
+package com.example.demo.ui.main.movie.adapters.concat
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.demo.core.BaseConcatHolder
-import com.example.demo.databinding.PopularMoviesRowBinding
-import com.example.demo.ui.main.adapters.MoviesAdapter
+import com.example.demo.databinding.TopRatedMovieRowBinding
+import com.example.demo.ui.main.movie.adapters.MoviesAdapter
 
-class PopularConcatAdapter(private val moviesAdapter: MoviesAdapter): RecyclerView.Adapter<BaseConcatHolder<*>>() {
+class TopRatedMovieConcatAdapter(private val moviesAdapter: MoviesAdapter): RecyclerView.Adapter<BaseConcatHolder<*>>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseConcatHolder<*> {
-        val itemBinding = PopularMoviesRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemBinding = TopRatedMovieRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ConcatViewHolder(itemBinding)
     }
 
@@ -23,9 +23,9 @@ class PopularConcatAdapter(private val moviesAdapter: MoviesAdapter): RecyclerVi
 
     override fun getItemCount(): Int = 1
 
-    private inner class ConcatViewHolder(val binding: PopularMoviesRowBinding) : BaseConcatHolder<MoviesAdapter>(binding.root) {
+    private inner class ConcatViewHolder(val binding: TopRatedMovieRowBinding) : BaseConcatHolder<MoviesAdapter>(binding.root) {
         override fun bind(adapter: MoviesAdapter) {
-            binding.rvPopularMovies.adapter = adapter
+            binding.rvTopRatedMovies.adapter = adapter
         }
     }
 }

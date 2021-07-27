@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/movieFragment">
+    app:startDestination="@id/tvShowFragment">
 
     <fragment
         android:id="@+id/movieFragment"
-        android:name="com.example.demo.ui.main.MovieFragment"
+        android:name="com.example.demo.ui.main.movie.adapters.MovieFragment"
         android:label="Movies"
         tools:layout="@layout/fragment_movie">
         <action
@@ -48,4 +48,9 @@
             android:name="releaseDate"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/tvShowFragment"
+        android:name="com.example.demo.ui.main.tv.TvShowFragment"
+        android:label="fragment_tv_show"
+        tools:layout="@layout/fragment_tv_show" />
 </navigation>

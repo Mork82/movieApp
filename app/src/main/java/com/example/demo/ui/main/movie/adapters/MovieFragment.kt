@@ -1,4 +1,4 @@
-package com.example.demo.ui.main
+package com.example.demo.ui.main.movie.adapters
 
 import android.os.Bundle
 import android.util.Log
@@ -16,15 +16,13 @@ import com.example.demo.data.local.LocalMovieDataSource
 import com.example.demo.data.model.Movie
 import com.example.demo.data.remote.RemoteMovieDataSource
 import com.example.demo.databinding.FragmentMovieBinding
-import com.example.demo.domain.MovieRepositoryImpl
+import com.example.demo.domain.movie.MovieRepositoryImpl
 import com.example.demo.domain.RetrofitClient
 import com.example.demo.presentation.MovieViewModel
 import com.example.demo.presentation.MovieViewModelFactory
-import com.example.demo.ui.main.adapters.concat.UpcomingConcatAdapter
-import com.example.demo.ui.main.adapters.MoviesAdapter
-import com.example.demo.ui.main.adapters.concat.PopularConcatAdapter
-import com.example.demo.ui.main.adapters.concat.TopRatedConcatAdapter
-import java.lang.Appendable
+import com.example.demo.ui.main.movie.adapters.concat.UpcomingMovieConcatAdapter
+import com.example.demo.ui.main.movie.adapters.concat.PopularMovieConcatAdapter
+import com.example.demo.ui.main.movie.adapters.concat.TopRatedMovieConcatAdapter
 
 
 class MovieFragment : Fragment(R.layout.fragment_movie), MoviesAdapter.OnMovieClickListener {
@@ -56,7 +54,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MoviesAdapter.OnMovieCl
                     concatAdapter.apply {
                         addAdapter(
                             0,
-                            UpcomingConcatAdapter(
+                            UpcomingMovieConcatAdapter(
                                 MoviesAdapter(
                                     it.data.first.results,
                                     this@MovieFragment
@@ -65,7 +63,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MoviesAdapter.OnMovieCl
                         )
                         addAdapter(
                             1,
-                            TopRatedConcatAdapter(
+                            TopRatedMovieConcatAdapter(
                                 MoviesAdapter(
                                     it.data.second.results,
                                     this@MovieFragment
@@ -74,7 +72,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MoviesAdapter.OnMovieCl
                         )
                         addAdapter(
                             2,
-                            PopularConcatAdapter(
+                            PopularMovieConcatAdapter(
                                 MoviesAdapter(
                                     it.data.third.results,
                                     this@MovieFragment

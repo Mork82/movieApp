@@ -4,8 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
 import com.example.demo.core.Resource
-import com.example.demo.data.model.MovieList
-import com.example.demo.domain.MovieRepository
+import com.example.demo.domain.movie.MovieRepository
 import kotlinx.coroutines.Dispatchers
 
 class MovieViewModel(private val repo: MovieRepository) : ViewModel() {
